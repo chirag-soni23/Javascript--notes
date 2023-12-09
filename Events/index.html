@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <h2>Amazing images</h2>
+    <div id="image">
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById("owl").onclick = function(){
+    //     alert("owl clicked")
+    // }
+   1. // type,timestamp, defaultprevented,srcElement
+    // target, toElemnt,currentTarget, clientX, clientY, screenX, screenY
+    // altKey, ctrlKey,shiftKey, KeyCode
+   2.  // document.getElementById("images").addEventListener("click",(e)=>{
+    //     console.log("Clicked inside the url");
+    // },false)
+    // document.getElementById("owl").addEventListener("click",(e)=>{
+    //     console.log("Owl clicked");
+    //     e.stopPropagation()
+    // },false)
+    // document.getElementById("google").addEventListener("click",(e)=>{
+    //     e.preventDefault()
+    //     e.stopPropagation()
+
+    // })
+
+    3. //
+    document.getElementById("images").addEventListener("click",(e)=>{
+        console.log(e.target.tagName);
+        if(e.target.tagName === "IMG"){
+            console.log(e.target.id);
+            let removeit = e.target.parentNode;
+            // removeit.parentNode.removeChild(removeit)
+            console.log(removeit);
+            removeit.remove()
+
+        }
+    },false)
+
+</script>
+</html>                                                                                                                                                    

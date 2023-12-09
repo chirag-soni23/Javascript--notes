@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calulator</h1>
+        <form>
+            <label for="">Height in c.m.</label>
+            <input id="height" type="text" name="" id="">
+            <label for="">weight in k.g.</label>
+            <input id="weight" type="text" name="" id="">
+            <button>Calculate</button>
+            <div id="result"></div>
+<div class="bmi">
+            <div id="uw">Under Weigth : - <p id="underweight"></p></div>
+            <div id="nw">Normal Weigth : - <p id="normalweight"></p></div>
+            <div id="ow">Over Weigth : - <p id="overweight"></p></div>
+            </div>
+
+        </form>
+    </div>
+</body>
+<script>
+    const form = document.querySelector("form")
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        const height = parseInt(document.querySelector("#height").value)
+        const weight = parseInt(document.querySelector("#weight").value)
+        const result = document.querySelector("#result")
+        const underweigth = document.querySelector("#underweight")
+        const normalweigth = document.querySelector("#normalweight")
+        const overweigth = document.querySelector("#overweight")
+        const uw = document.querySelector("#uw")
+        const nw = document.querySelector("#nw")
+        const ow = document.querySelector("#ow")
+
+        if(height === "" || height <0 || isNaN(height)){
+            result.innerHTML = `Please give a valid height`
+            result.style.color  = 'red'
+
+        }
+
+       else if(weight === "" || weight <0 || isNaN(weight)){
+            result.innerHTML = `Please give a valid weight`
+            result.style.color  = 'red'
+
+        }
+        else{
+           const bmi = (weight / ((height*height)/10000)).toFixed(2)
+           result.innerHTML = bmi
+           result.style.color ='lightgreen'
+           if(bmi <= 18.5){
+            underweigth.innerHTML ="If your BMI is less than 18.5"
+            underweigth.style.color ='yellow'
+            nw.style.display = 'none'
+            ow.style.display = 'none'
+           }
+           else if(bmi >= 18.5 && bmi <= 24.9){
+            normalweigth.innerHTML = "If your BMI is 18.5 to 24.9, it falls within the Healthy Weight range."
+            normalweigth.style.color = "greenyellow"
+            ow.style.display = 'none'
+            uw.style.display = 'none'
+           }
+           else if(bmi>=25.0){
+            overweigth.innerHTML = "If your BMI is 25.0 to <30, it falls within the overweight range."
+            overweigth.style.color = 'red'
+            nw.style.display = 'none'
+            uw.style.display = 'none'
+           }
+        }
+    })
+</script>
+</html>

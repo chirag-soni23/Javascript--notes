@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    body{
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+    .card{
+        height: 50vh;
+        width: 50vw;
+        background-color: #fff;
+    }
+    img{
+        height: 200px;
+        width: 300px;
+    }
+
+</style>
+<body style="background-color: #212121;">
+    <div class="card">
+        <!-- <img alt=""> -->
+        <div>Followers: <span class="folo"></span></div>
+    </div>
+    
+</body>
+<script>
+    const folo = document.querySelector(".folo")
+    const card = document.querySelector(".card")
+    const requestURL = "https://api.github.com/users/chirag-soni23"
+    const xhr = new XMLHttpRequest()
+    xhr.open("GET",requestURL)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            // console.log(data.avatar_url);
+            folo.innerHTML = data.followers
+
+
+
+
+        }
+    }
+    xhr.send()
+</script>
+</html>

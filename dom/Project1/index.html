@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        transition: all ease 0.4s;
+    }
+    .buttons{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .button{
+        padding: 50px;
+        border: none;
+        cursor: pointer;
+        border: 4px solid black;
+    }
+    #red{
+        background-color: red;
+    }
+    #green{
+        background-color: green;
+    }
+    #yellow {
+        background-color: yellow;
+    }
+    #blue{
+        background-color: blue;
+    }
+</style>
+<body style="background-color: #212121; font-family: sans-serif; display: flex;
+ flex-direction: column;text-align: center;">
+    <h1 style="color: #fff; text-align: center;">Color Scheme Switcher</h1>
+    <div class="buttons">
+    <span id="red" class="button"></span>
+    <span id="green" class="button"></span>
+    <span id="yellow" class="button"></span>
+    <span id="blue"class="button"></span>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
